@@ -9,7 +9,7 @@ LOCALE_FILES_PATH = "locales/"
 INPUT_FILE_PATH = "index.html"
 OUTPUT_FILE_NAME = "index.html"
 
-def translate(textToTranslate, localeFilePath, outputFolder):
+def translate(textToTranslate, localeFilePath, outputFolderName):
     translatedText = textToTranslate
     localeFile = open(localeFilePath, 'r')
     try:
@@ -26,7 +26,7 @@ def translate(textToTranslate, localeFilePath, outputFolder):
         except:
             print "ERROR: The key '" + key + "'does not exist"
 
-    translatedFilePath = './' + outputFolder + '/' + OUTPUT_FILE_NAME
+    translatedFilePath = './' + outputFolderName + '/' + OUTPUT_FILE_NAME
     if not os.path.exists(os.path.dirname(translatedFilePath)):
         try:
             os.makedirs(os.path.dirname(translatedFilePath))
